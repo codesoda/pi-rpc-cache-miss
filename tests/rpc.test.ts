@@ -176,7 +176,7 @@ export default function (pi) {
 
     const ui = records.filter((record) => record.type === "extension_ui_request");
     expect(ui).toHaveLength(1);
-    expect(ui[0]).toMatchObject({ method: "notify", notifyType: "info", message: notice });
+    expect(ui[0]).toMatchObject({ method: "notify", notifyType: "warning", message: notice });
     expect(ui.filter((record) => ["setStatus", "setFooter", "setWidget"].includes(String(record.method)))).toEqual([]);
 
     const messagesResponse = records.find((record) => record.id === "messages");

@@ -24,7 +24,7 @@ export default function rpcCacheMiss(pi: ExtensionAPI): void {
     seen.add(event.message);
     const missed = estimateMissedTokens(ctx.sessionManager.getBranch(), event.message);
     if (missed !== undefined && missed >= config.thresholdTokens) {
-      ctx.ui.notify(formatNotice(missed), "info");
+      ctx.ui.notify(formatNotice(missed), "warning");
     }
     // Notification only: no replacement message, session entry, or continuation.
   });

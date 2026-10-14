@@ -48,7 +48,7 @@ describe("RPC-only extension", () => {
     expect(test.notify).not.toHaveBeenCalled();
     expect(test.fire("message_end", { message: message(20_001, 30_000) })).toBeUndefined();
     expect(test.notify).toHaveBeenCalledExactlyOnceWith(
-      "Possible cache miss: approximately 20,000 previously sent tokens appear to have been processed again.", "info");
+      "Possible cache miss: approximately 20,000 previously sent tokens appear to have been processed again.", "warning");
   });
   it("honors a custom threshold", async () => {
     await writeFile(join(host.agentDir, CONFIG_FILENAME), '{"thresholdTokens":5000}');
