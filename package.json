@@ -1,0 +1,31 @@
+{
+  "name": "pi-rpc-cache-miss",
+  "version": "0.1.0",
+  "description": "RPC-only notifications for possible prompt-cache misses in Pi coding agent.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codesoda/pi-rpc-cache-miss.git"
+  },
+  "keywords": ["pi-package", "pi", "rpc", "prompt-cache"],
+  "engines": { "node": ">=22.19.0" },
+  "files": ["src", "README.md", "LICENSE", "pi-rpc-cache-miss.example.json"],
+  "pi": { "extensions": ["./src/index.ts"] },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm pack --dry-run"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "1.2.0",
+    "@earendil-works/pi-coding-agent": "1.2.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "4.1.11"
+  }
+}
